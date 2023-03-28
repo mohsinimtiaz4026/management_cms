@@ -1,0 +1,51 @@
+{
+  "name": "managment_software",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "lint": "next lint",
+    "lint:es": "eslint --ext .js,.jsx .",
+    "lint:fix": "eslint --fix --ext .js,.jsx .",
+    "dev": "next dev -p 3000",
+    "build": "next build",
+    "start": "next start"
+  },
+  "dependencies": {
+    "@emotion/cache": "^11.7.1",
+    "@emotion/react": "^11.7.1",
+    "@emotion/server": "^11.4.0",
+    "@emotion/styled": "^11.6.0",
+    "@iconify/react": "^3.1.0",
+    "@mui/material": "^5.2.4",
+    "@mui/x-data-grid": "^6.0.3",
+    "@reduxjs/toolkit": "^1.7.1",
+    "axios": "^0.25.0",
+    "change-case": "^4.1.2",
+    "chart.js": "^4.2.1",
+    "cookie": "^0.4.1",
+    "date-fns": "^2.27.0",
+    "faker": "^6.6.6",
+    "framer-motion": "^5.5.5",
+    "js-cookie": "^3.0.1",
+    "next": "13.2.4",
+    "nprogress": "^0.2.0",
+    "react": "18.2.0",
+    "react-chartjs-2": "^5.2.0",
+    "react-dom": "18.2.0",
+    "react-lazy-load-image-component": "^1.5.1",
+    "react-redux": "^7.2.6",
+    "redux-persist": "^6.0.0",
+    "simplebar": "^5.3.6",
+    "simplebar-react": "^2.3.6",
+    "stylis": "^4.0.13",
+    "stylis-plugin-rtl": "^2.1.1"
+  },
+  "devDependencies": {
+    "@next/eslint-plugin-next": "^12.0.7",
+    "eslint": "^7.32.0",
+    "eslint-config-next": "^12.0.7",
+    "eslint-config-prettier": "^8.3.0",
+    "prettier": "2.5.1",
+    "typescript": "^4.4.4"
+  }
+}
