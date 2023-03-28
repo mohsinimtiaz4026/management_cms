@@ -47,27 +47,27 @@ const sidebarConfig = [
     items: [
       {
         title: 'Clients',
-        path: '/dashboard/users',
+        // path: '',
         icon: ICONS.patient,
         children: [
-          { title: 'New Clients', path: '/dashboard/clients/NewClients',icon: ICONS.patient_add },
-          { title: 'Client List', path: '/dashboard/user/five',icon: ICONS.patient_list },
-          { title: 'Form Design', path: '/dashboard/user/six',icon: ICONS.form_design },
-          { title: 'Settings', path: '/dashboard/user/six',icon: ICONS.settings},
+          { title: 'New Clients', path: '/dashboard/clients/AddClient',icon: ICONS.patient_add },
+          { title: 'Client List', path: '/dashboard/clients/ClientList',icon: ICONS.patient_list },
+          { title: 'Form Design', path: '/dashboard/clients/FormDesign',icon: ICONS.form_design },
+          { title: 'Settings', path: '/dashboard/clients/Settings',icon: ICONS.settings},
         ],
       },
       {
         title: 'Appointments',
-        path: '/dashboard/user',
+        // path: '',
         icon: ICONS.appointments,
         children: [
-          { title: 'Appointments', path: '/dashboard/user/four',icon: ICONS.appointments_detail },
-          { title: 'Appointments List', path: '/dashboard/user/five',icon: ICONS.appointments_list },
+          { title: 'Appointments', path: '/dashboard/appoinments',icon: ICONS.appointments_detail },
+          { title: 'Appointments List', path: '/dashboard/appoinments/AppoinmentList',icon: ICONS.appointments_list },
          ],
       },
       {
         title: 'Bill/invoice',
-        path: '/dashboard/user',
+        path: '/dashboard/invoice',
         icon: ICONS.billInvoice,
       },
     ],
@@ -77,12 +77,12 @@ const sidebarConfig = [
     items: [
       {
         title: 'Shortcut Keys',
-        path: '/dashboard/user',
+        path: '/dashboard/shortcut',
         icon: ICONS.shortcut,
       },
       {
         title: 'Settings',
-        path: '/dashboard/user',
+        path: '/dashboard/settings',
         icon: ICONS.settings,
       },
     ],

@@ -26,7 +26,6 @@ PageHome.getLayout = function getLayout(page) {
 export default function PageHome() {
   const {themeStretch} = useSettings();
 
-  console.log();
   return (
     <Page title="Home">
       <Container maxWidth={themeStretch ? false : 'xl'}>
