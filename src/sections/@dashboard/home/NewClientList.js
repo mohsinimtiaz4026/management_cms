@@ -1,33 +1,33 @@
 // @mui
-import { Card, CardHeader, Typography, Button } from "@mui/material";
+import { Card, CardHeader, Box, Button } from "@mui/material";
 import { DataGrid } from "@mui/x-data-grid";
 //@mui styles
-import { styled, useTheme } from "@mui/material/styles";
+import { useTheme } from "@mui/material/styles";
 
 // ----------------------------------------------------------------------
-
-const RowStyle = styled("div")({
-  width: "100%",
-  height: "400",
-});
 const columns = [
-  { field: "id", headerName: "ID", width: 70 },
-  { field: "name", headerName: "Full Name", width: 130 },
-  { field: "Phone", headerName: "Phone Number", width: 130 },
+  { field: "id", headerName: "ID"},
+  { field: "name", headerName: "Full Name",width: 170},
   {
     field: "date",
     headerName: "Date",
-    width: 90,
+    width: 130,
+    valueFormater: (props) => {
+      const valueFormatted = moment(new Date(props.row.date)).format(
+        "DD MMM YYYY"
+      );
+      return `${valueFormatted}`;
+    },
   },
 ];
 
 const rows = [
-  { id: 1, name: "Raj Chaudhary", phone: "923104292898", date: "28 Mar 2023" },
-  { id: 2, name: "Anas Khan", phone: "923237900263", date: "28 Mar 2023" },
-  { id: 3, name: "Fawad Ahmad", phone: "923024347640", date: "28 Mar 2023" },
-  { id: 4, name: "Hasnat Imtiaz", phone: "9232658428253", date: "28 Mar 2023" },
-  { id: 5, name: "John Alan",phone: "1569559959",date: "28 March 20234" },
-  { id: 6, name: "Elizabeth",phone: "6426595292",date: "28 March 20234" },
+  { id: 1, name: "Raj Chaudhary",date: "28 Mar 2023" },
+  { id: 2, name: "Anas Khan", date: "28 Mar 2023" },
+  { id: 3, name: "Fawad Ahmad",date: "28 Mar 2023" },
+  { id: 4, name: "Hasnat Imtiaz", date: "28 Mar 2023" },
+  { id: 5, name: "John Alan",date: "28 Mar 2023" },
+  { id: 6, name: "Elizabeth",date: "28 Mar 2023" },
 ];
 
 const NewClientList = () => {
@@ -40,14 +40,21 @@ const NewClientList = () => {
         action={<Button variant="text">Full Report</Button>}
       />
 
-      <RowStyle>
+      <Box sx={{width: "100%",height: 400}}>
         <DataGrid
           columns={columns}
           rows={rows}
-          pageSize={4}
+          initialState={{
+            pagination: {
+              paginationModel: {
+                pageSize: 5,
+              },
+            },
+          }}
+          pageSizeOptions={[4]}
           rowsPerPageOptions={[5]}
         />
-      </RowStyle>
+      </Box>
     </Card>
   );
 };

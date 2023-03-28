@@ -47,10 +47,10 @@ const sidebarConfig = [
     items: [
       {
         title: 'Clients',
-        path: '/dashboard/user',
+        path: '/dashboard/users',
         icon: ICONS.patient,
         children: [
-          { title: 'New Clients', path: '/dashboard/user/four',icon: ICONS.patient_add },
+          { title: 'New Clients', path: '/dashboard/clients/NewClients',icon: ICONS.patient_add },
           { title: 'Client List', path: '/dashboard/user/five',icon: ICONS.patient_list },
           { title: 'Form Design', path: '/dashboard/user/six',icon: ICONS.form_design },
           { title: 'Settings', path: '/dashboard/user/six',icon: ICONS.settings},
