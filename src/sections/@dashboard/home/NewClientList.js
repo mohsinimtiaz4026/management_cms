@@ -8,6 +8,8 @@ import { useTheme } from "@mui/material/styles";
 const columns = [
   { field: "id", headerName: "ID"},
   { field: "name", headerName: "Full Name",width: 170},
+  { field: "phone", headerName: "Phone Number",width: 170},
+  { field: "email", headerName: "Email Address",width: 220},
   {
     field: "date",
     headerName: "Date",
@@ -22,12 +24,12 @@ const columns = [
 ];
 
 const rows = [
-  { id: 1, name: "Raj Chaudhary",date: "28 Mar 2023" },
-  { id: 2, name: "Anas Khan", date: "28 Mar 2023" },
-  { id: 3, name: "Fawad Ahmad",date: "28 Mar 2023" },
-  { id: 4, name: "Hasnat Imtiaz", date: "28 Mar 2023" },
-  { id: 5, name: "John Alan",date: "28 Mar 2023" },
-  { id: 6, name: "Elizabeth",date: "28 Mar 2023" },
+  { id: 1, name: "Raj Chaudhary",phone: "03211251997",email: "imtiazmohsin56@gmail.com",date: "28 Mar 2023" },
+  { id: 2, name: "Anas Khan",phone: "03237900263",email: "khansaab0331@gmail.com", date: "28 Mar 2023" },
+  { id: 3, name: "Fawad Ahmad",phone: "03265846595",email: "fawad1122@gmail.com",date: "28 Mar 2023" },
+  { id: 4, name: "Hasnat Imtiaz",phone: "03259814267",email: "hasant8090@gmail.com", date: "28 Mar 2023" },
+  { id: 5, name: "John Alan",phone: "03104292898",email: "john56@gmail.com",date: "28 Mar 2023" },
+  { id: 6, name: "Elizabeth",phone: "03004146436",email: "elizabeth9023@gmail.com",date: "28 Mar 2023" },
 ];
 
 const NewClientList = () => {

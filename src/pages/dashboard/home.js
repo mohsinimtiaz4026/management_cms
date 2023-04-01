@@ -8,12 +8,9 @@ import Layout from '../../layouts';
 import Page from '../../components/Page';
 // sections
 import {
-  TotalClients, 
-  TotalAppointments, 
+  TotalClients,  
   Invoices,
   NewClientList,
-  ClientGrowthChart,
-  ClientAppoinments,
 } from '../../sections/@dashboard/home';
 // ----------------------------------------------------------------------
 
@@ -30,27 +27,16 @@ export default function PageHome() {
     <Page title="Home">
       <Container maxWidth={themeStretch ? false : 'xl'}>
         <Grid container spacing={3}>
-          <Grid item xs={12} md={3}>
+          <Grid item xs={12} md={6}>
             <TotalClients></TotalClients>
           </Grid>
-          <Grid item xs={12} md={5}>
-            <TotalAppointments></TotalAppointments>
-          </Grid>
-          <Grid item xs={12} md={4}>
+          <Grid item xs={12} md={6}>
             <Invoices></Invoices>
           </Grid>
         </Grid>
         <Grid container spacing={3}>
-          <Grid item xs={12} md={6}>
-            <NewClientList></NewClientList>
-          </Grid>
-          <Grid item xs={12} md={6}>
-            <ClientGrowthChart></ClientGrowthChart>
-          </Grid>
-        </Grid>
-        <Grid container spacing={3}>
           <Grid item xs={12} md={12}>
-            <ClientAppoinments></ClientAppoinments>
+            <NewClientList />
           </Grid>
         </Grid>
       </Container>

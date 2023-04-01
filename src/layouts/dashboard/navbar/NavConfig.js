@@ -13,12 +13,8 @@ const ICONS = {
   patient_add: getIcon('ic_user_add'),
   patient_list: getIcon('ic_patient_list'),
   form_design: getIcon('ic_form_design'),
-  appointments: getIcon('ic_calendar'),
-  appointments_detail: getIcon('ic_calendar_app'),
-  appointments_list: getIcon('ic_appointment_list'),
   billInvoice: getIcon('ic_bill'),
   shortcut: getIcon('ic_shortcut'),
-  settings: getIcon('ic_settings'),
 };
 
 const sidebarConfig = [
@@ -53,17 +49,7 @@ const sidebarConfig = [
           { title: 'New Clients', path: '/dashboard/clients/AddClient',icon: ICONS.patient_add },
           { title: 'Client List', path: '/dashboard/clients/ClientList',icon: ICONS.patient_list },
           { title: 'Form Design', path: '/dashboard/clients/FormDesign',icon: ICONS.form_design },
-          { title: 'Settings', path: '/dashboard/clients/Settings',icon: ICONS.settings},
         ],
-      },
-      {
-        title: 'Appointments',
-        // path: '',
-        icon: ICONS.appointments,
-        children: [
-          { title: 'Appointments', path: '/dashboard/appoinments',icon: ICONS.appointments_detail },
-          { title: 'Appointments List', path: '/dashboard/appoinments/AppoinmentList',icon: ICONS.appointments_list },
-         ],
       },
       {
         title: 'Bill/invoice',
@@ -79,11 +65,6 @@ const sidebarConfig = [
         title: 'Shortcut Keys',
         path: '/dashboard/shortcut',
         icon: ICONS.shortcut,
-      },
-      {
-        title: 'Settings',
-        path: '/dashboard/settings',
-        icon: ICONS.settings,
       },
     ],
   },
