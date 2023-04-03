@@ -30,7 +30,11 @@ import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import { DatePicker } from "@mui/x-date-pickers/DatePicker";
 import { DataGrid } from "@mui/x-data-grid";
 // sections
-import { ServiceForm,ServiceTable,ServiceCal } from "../../sections/@dashboard/invoice";
+import {
+  ServiceForm,
+  ServiceTable,
+  ServiceCal,
+} from "../../sections/@dashboard/invoice";
 // ----------------------------------------------------------------------
 
 PageInvoices.getLayout = function getLayout(page) {
@@ -53,10 +57,10 @@ export default function PageInvoices() {
   const handleClose = () => {
     setOpen(false);
   };
-  
+
   const UpdateRecord = () => {
     setRecordSelect(true);
-  }
+  };
   const columns = [
     {
       field: "name",
@@ -103,15 +107,21 @@ export default function PageInvoices() {
                 sx={{
                   display: "flex",
                   alignItems: "center",
+                  flexWrap: "wrap",
                   justifyContent: "space-between",
                 }}
               >
                 {onRecordSelect ? (
                   <Grid>
-                    <Typography>Name: Mohsin Imtiaz <Button variant="text" onClick={handleClickOpen}>Change</Button></Typography>
+                    <Typography>
+                      Name: Mohsin Imtiaz{" "}
+                      <Button variant="text" onClick={handleClickOpen}>
+                        Change
+                      </Button>
+                    </Typography>
                     <Typography>Phone: 03211251997</Typography>
                   </Grid>
-                ) : 
+                ) : (
                   <Button
                     variant="text"
                     startIcon={
@@ -121,7 +131,7 @@ export default function PageInvoices() {
                   >
                     Select Client
                   </Button>
-                }
+                )}
                 <Dialog
                   open={open}
                   TransitionComponent={Transition}

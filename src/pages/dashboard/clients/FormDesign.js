@@ -1,3 +1,4 @@
+import { useState } from "react";
 // @mui
 import {
   Container,
@@ -17,8 +18,9 @@ import useSettings from "../../../hooks/useSettings";
 import Layout from "../../../layouts";
 // components
 import Page from "../../../components/Page";
-// sections
-
+// redux
+import {setFormFields, getFormFields} from '@/redux/slices/forms'
+import { useSelector,useDispatch } from "react-redux";
 // ----------------------------------------------------------------------
 
 PageFormDesign.getLayout = function getLayout(page) {
@@ -29,6 +31,10 @@ PageFormDesign.getLayout = function getLayout(page) {
 
 export default function PageFormDesign() {
   const { themeStretch } = useSettings();
+  const dispatch = useDispatch()
+  const {register: registerFormFields} = useSelector(getFormFields)
+  
+  console.log(registerFormFields);
   return (
     <Page title="Form Design">
       <Container maxWidth={themeStretch ? false : "xl"}>
@@ -58,7 +64,7 @@ export default function PageFormDesign() {
                     <FormControlLabel
                       control={
                         <Checkbox
-                          defaultChecked
+                          defaultChecked = {registerFormFields.fullname == true ? true : false}
                           defaultValue={"fullname"}
                           disabled
                         />
@@ -80,50 +86,172 @@ export default function PageFormDesign() {
                   </FormControl>
                   <FormControl>
                     <FormControlLabel
-                      control={<Checkbox defaultValue={"email"} />}
+                      control={
+                        <Checkbox
+                        defaultChecked = {registerFormFields.email == true ? true : false}
+                          defaultValue={"email"}
+                          onChange={(event) => {
+                            dispatch(
+                              setFormFields({ref:'register', fields:{
+                                ...registerFormFields,
+                                email: event.target.checked
+                              }})
+                            )
+                          }}
+                        />
+                      }
                       label="Email Address"
                     />
                   </FormControl>
                   <FormControl>
                     <FormControlLabel
-                      control={<Checkbox defaultValue={"gender"} />}
+                      control={
+                        <Checkbox
+                        defaultChecked = {registerFormFields.gender == true ? true : false}
+                          defaultValue={"gender"}
+                          onChange={(event) => {
+                            dispatch(
+                              setFormFields({ref:'register', fields:{
+                                ...registerFormFields,
+                                gender: event.target.checked
+                              }})
+                            )
+                          }}
+                        />
+                      }
                       label="Gender"
                     />
                   </FormControl>
                   <FormControl>
                     <FormControlLabel
-                      control={<Checkbox defaultValue={"martialstatus"} />}
+                      control={
+                        <Checkbox
+                        defaultChecked = {registerFormFields.martialStatus == true ? true : false}
+                          defaultValue={"martialstatus"}
+                          onChange={(event) => {
+                            dispatch(
+                              setFormFields({ref:'register', fields:{
+                                ...registerFormFields,
+                                martialStatus: event.target.checked
+                              }})
+                            )
+                          }}
+                        />
+                      }
                       label="Martial Status"
                     />
                   </FormControl>
                   <FormControl>
                     <FormControlLabel
-                      control={<Checkbox defaultValue={"dob"} />}
+                      control={
+                        <Checkbox
+                        defaultChecked = {registerFormFields.dateOfBirth == true ? true : false}
+                          defaultValue={"dob"}
+                          onChange={(event) => {
+                            dispatch(
+                              setFormFields({ref:'register', fields:{
+                                ...registerFormFields,
+                                dateOfBirth: event.target.checked
+                              }})
+                            )
+                          }}
+                        />
+                      }
                       label="Date Of Birth"
                     />
                   </FormControl>
                   <FormControl>
                     <FormControlLabel
-                      control={<Checkbox defaultValue={"bloodgroup"} />}
+                      control={
+                        <Checkbox
+                        defaultChecked = {registerFormFields.bloodGroup == true ? true : false}
+                          defaultValue={"bloodgroup"}
+                          onChange={(event) => {
+                            dispatch(
+                              setFormFields({ref:'register', fields:{
+                                ...registerFormFields,
+                                bloodGroup: event.target.checked
+                              }})
+                            )
+                          }}
+                        />
+                      }
                       label="Blood Group"
                     />
                   </FormControl>
                   <FormControl>
                     <FormControlLabel
-                      control={<Checkbox defaultValue={"cnic"} />}
+                      control={
+                        <Checkbox
+                        defaultChecked = {registerFormFields.cnic == true ? true : false}
+                          defaultValue={"cnic"}
+                          onChange={(event) => {
+                            dispatch(
+                              setFormFields({ref:'register', fields:{
+                                ...registerFormFields,
+                                cnic: event.target.checked
+                              }})
+                            )
+                          }}
+                        />
+                      }
                       label="CNIC"
                     />
                   </FormControl>
                   <FormControl>
                     <FormControlLabel
-                      control={<Checkbox defaultValue={"religion"} />}
+                      control={
+                        <Checkbox
+                        defaultChecked = {registerFormFields.religion == true ? true : false}
+                          defaultValue={"religion"}
+                          onChange={(event) => {
+                            dispatch(
+                              setFormFields({ref:'register', fields:{
+                                ...registerFormFields,
+                                religion: event.target.checked
+                              }})
+                            )
+                          }}
+                        />
+                      }
                       label="Religion"
                     />
                   </FormControl>
                   <FormControl>
                     <FormControlLabel
-                      control={<Checkbox defaultValue={"profession"} />}
+                      control={
+                        <Checkbox
+                        defaultChecked = {registerFormFields.profession == true ? true : false}
+                          defaultValue={"profession"}
+                          onChange={(event) => {
+                            dispatch(
+                              setFormFields({ref:'register', fields:{
+                                ...registerFormFields,
+                                profession: event.target.checked
+                              }})
+                            )
+                          }}
+                        />
+                      }
                       label="Profession"
+                    />
+                  </FormControl>
+                  <FormControl>
+                    <FormControlLabel
+                      control={
+                        <Checkbox
+                          defaultValue={"file"}
+                          onChange={(event) => {
+                            dispatch(
+                              setFormFields({ref:'register', fields:{
+                                ...registerFormFields,
+                                file: event.target.checked
+                              }})
+                            )
+                          }}
+                        />
+                      }
+                      label="file"
                     />
                   </FormControl>
                 </Box>

@@ -1,5 +1,10 @@
 // @mui
-import { Grid, Box, Typography,TextField,MenuItem,Button } from "@mui/material";
+import {
+  Grid,
+  Box,
+  Typography,
+  Button,
+} from "@mui/material";
 // @mui styles
 import { useTheme } from "@mui/material/styles";
 // ----------------------------------------------------------------------
@@ -7,70 +12,71 @@ import { useTheme } from "@mui/material/styles";
 export default function ServiceCal() {
   const theme = useTheme();
   return (
-    <Grid sx={{
-        mt: 2,
-    }}>
-      <Box
+    <Box>
+      <Grid
         sx={{
+          mt: 2,
           display: "flex",
-          alignItems: "center",
+          alignItems: "end",
+          justifyContent: "flex-start",
+          flexDirection: "column",
+          textAlign: "left"
         }}
       >
-        <Typography>Gross Total:</Typography>
-        <Typography sx={{ pl: 2 }} variant="h6">
-          840
-        </Typography>
-      </Box>
-      <Box
-        sx={{
-          display: "flex",
-          alignItems: "center",
-        }}
-      >
-        <Typography>Service Discount:</Typography>
-        <Typography sx={{ pl: 2 }} variant="h6">
-          40
-        </Typography>
-      </Box>
-      <Box
-        sx={{
-          display: "flex",
-          alignItems: "center",
-        }}
-      >
-        <Typography>Sub Total:</Typography>
-        <Typography sx={{ pl: 2 }} variant="h6">
-          790
-        </Typography>
-      </Box>
-      <Box
-        sx={{
-          display: "flex",
-          alignItems: "center",
-        }}
-      >
-        <Typography>Discount Type:</Typography>
-        <TextField  
-        defaultValue="value" 
-        select
-        sx={{ml:1,width:'25ch'}}
+        <Box
+          sx={{
+            mb: 1,
+            display: "flex",
+            alignItems: "center",
+          }}
         >
-            <MenuItem value="value" selected>Value</MenuItem>
-            <MenuItem value="percentage">Percentage</MenuItem>
-        </TextField>
+          <Typography>Gross Total:</Typography>
+          <Typography sx={{ pl: 2 }} variant="h6">
+            840
+          </Typography>
+        </Box>
+        <Box
+          sx={{
+            mb: 1,
+            display: "flex",
+            alignItems: "center",
+          }}
+        >
+          <Typography>Service Discount:</Typography>
+          <Typography sx={{ pl: 2 }} variant="h6">
+            40
+          </Typography>
+        </Box>
+        <Box
+          sx={{
+            mb: 1,
+            display: "flex",
+            alignItems: "center",
+          }}
+        >
+          <Typography>Sub Total:</Typography>
+          <Typography sx={{ pl: 2 }} variant="h6">
+            790
+          </Typography>
+        </Box>
+        <Box
+          sx={{
+            mb: 1,
+            display: "flex",
+            alignItems: "center",
+          }}
+        >
+          <Typography>Total:</Typography>
+          <Typography sx={{ pl: 2 }} variant="h6">
+            790
+          </Typography>
+        </Box>
+      </Grid>
+      <Box sx={{textAlign: 'center',my:1}}>
+        <Button variant="contained" sx={{ mt: 1 }}>
+          Create Bill/Invoice
+        </Button>
       </Box>
-      <Box
-        sx={{
-          display: "flex",
-          alignItems: "center",
-        }}
-      >
-        <Typography>Total:</Typography>
-        <Typography sx={{ pl: 2 }} variant="h6">
-          790
-        </Typography>
-      </Box>
-      <Button variant="contained" sx={{mt:1}}>Create Bill/Invoice</Button>
-    </Grid>
+    </Box>
   );
 }

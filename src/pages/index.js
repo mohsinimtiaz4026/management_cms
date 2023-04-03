@@ -11,6 +11,5 @@ export default function Index() {
       router.push('/dashboard');
     }
   });
-
   return null;
 }

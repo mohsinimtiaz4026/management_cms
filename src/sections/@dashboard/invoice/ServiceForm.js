@@ -2,7 +2,7 @@ import { forwardRef, useState } from "react";
 // @mui
 import {
   Box,
-  TextField,
+  Select,
   MenuItem,
   Button,
   Dialog,
@@ -10,6 +10,8 @@ import {
   DialogContent,
   DialogActions,
   DialogTitle,
+  OutlinedInput,
+  TextField,
 } from "@mui/material";
 // @mui styles
 import { useTheme } from "@mui/material/styles";
@@ -19,6 +21,16 @@ const Transition = forwardRef(function Transition(props, ref) {
 });
 export default function ServiceForm() {
   const theme = useTheme();
+  const ITEM_HEIGHT = 48;
+  const ITEM_PADDING_TOP = 8;
+  const MenuProps = {
+    PaperProps: {
+      style: {
+        maxHeight: ITEM_HEIGHT * 2.5 + ITEM_PADDING_TOP,
+        // width: 250,
+      },
+    },
+  };
   const [open, setOpen] = useState(false);
   const handleClickOpen = () => {
     setOpen(true);
@@ -38,11 +50,19 @@ export default function ServiceForm() {
         gap: 2,
       }}
     >
-      <TextField select label="Service" defaultValue="">
+      <Select
+        MenuProps={MenuProps}
+        defaultValue=""
+        onChange=""
+        label="Service"
+        input={<OutlinedInput label="Service" />}
+      >
         <MenuItem value="" onClick={handleClickOpen}>
           Add Service
         </MenuItem>
-      </TextField>
+        <MenuItem value="fluffy">Fluffy</MenuItem>
+        <MenuItem value="pet_mommy">Pet Mommy</MenuItem>
+      </Select>
       <Dialog
         open={open}
         TransitionComponent={Transition}
@@ -52,10 +72,10 @@ export default function ServiceForm() {
       >
         <DialogTitle>Add Service</DialogTitle>
         <DialogContent>
-          <Box sx={{ pt:1,m: 1,width: '25ch'}}>
+          <Box sx={{ pt: 1, m: 1, width: "25ch" }}>
             <TextField label="Name" />
-            <TextField label="Amount" sx={{mt:2}}/>
-            <TextField label="Discription (Optional)" sx={{mt:2}} />
+            <TextField label="Amount" sx={{ mt: 2 }} />
+            <TextField label="Discription (Optional)" sx={{ mt: 2 }} />
           </Box>
         </DialogContent>
         <DialogActions>
@@ -69,10 +89,7 @@ export default function ServiceForm() {
       <TextField label="Quanitty" inputMode="numeric" />
       <TextField label="Charges" inputMode="numeric" />
       <TextField label="Discount" inputMode="numeric" />
-      <Button
-        variant="contained">
-        Add Service
-      </Button>
+      <Button variant="contained">Add Service</Button>
     </Box>
   );
 }

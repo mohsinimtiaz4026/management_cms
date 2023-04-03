@@ -7,12 +7,11 @@ import {
   CardContent,
   ButtonGroup,
   Button,
-  TextField,
   Box,
   IconButton,
   Tooltip,
 } from "@mui/material";
-import { DataGrid } from "@mui/x-data-grid";
+import { DataGrid,GridToolbar} from "@mui/x-data-grid";
 // hooks
 import useSettings from "../../../hooks/useSettings";
 // layouts
@@ -20,8 +19,10 @@ import Layout from "../../../layouts";
 // components
 import Page from "../../../components/Page";
 import Iconify from "../../../components/Iconify";
-//
+// img
 import Image from "next/image";
+// router
+import { useRouter } from "next/router";
 // ----------------------------------------------------------------------
 
 PageClientList.getLayout = function getLayout(page) {
@@ -29,9 +30,9 @@ PageClientList.getLayout = function getLayout(page) {
 };
 
 // ----------------------------------------------------------------------
-
 export default function PageClientList() {
   const { themeStretch } = useSettings();
+  const router = useRouter();
   const columns = [
     {
       field: "profile",
@@ -225,15 +226,23 @@ export default function PageClientList() {
             <Card sx={{ px: 3, py: 1, mx: "auto" }}>
               <CardHeader
                 title="Client List"
-                action={<Button variant="text">Add Client</Button>}
+                action={
+                  <Button
+                    variant="text"
+                    onClick={() => router.push("/dashboard/clients/AddClient")}
+                  >
+                    Add Client
+                  </Button>
+                }
               />
               <CardContent>
-                <Grid
+                {/* <Grid
                   sx={{
+                    mb: 2,
                     display: "flex",
                     alignItems: "center",
                     justifyContent: "space-between",
-                    flexWrap: "wrap"
+                    flexWrap: "wrap",
                   }}
                 >
                   <ButtonGroup>
@@ -250,27 +259,17 @@ export default function PageClientList() {
                       Export to PDF
                     </Button>
                   </ButtonGroup>
-                  <Box
-                    component="form"
-                    sx={{
-                      "& .MuiTextField-root": { width: "30ch" },
-                    }}
-                    noValidate
-                    autoComplete="off"
-                  >
-                    <TextField
-                      id="outlined-required"
-                      placeholder="Search by Id, Name and Phone"
-                    />
-                  </Box>
-                </Grid>
+                </Grid> */}
                 <Box
                   sx={{
                     width: "100%",
-                    height: 400,
+                    height: 500,
                   }}
                 >
                   <DataGrid
+                    slots={{
+                      toolbar: GridToolbar,
+                    }}
                     rows={rows}
                     columns={columns}
                     initialState={{

@@ -30,6 +30,12 @@ PageShortcut.getLayout = function getLayout(page) {
 export default function PageShortcut() {
   const { themeStretch } = useSettings();
 
+  window.addEventListener('keydown',(e) => {
+    if(e.altKey && e.which == 97){
+      alert('pressed alt');
+    }
+  });
+
   return (
     <Page title="Shortcuts">
       <Container maxWidth={themeStretch ? false : "xl"}>
